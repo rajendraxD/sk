@@ -24,11 +24,11 @@ jobs:
         copy ngrok.exe C:\Windows\System32
     - name: Connect your NGROK account
 
-      run: .\ngrok.exe authtoken 1wNqNW2gB0ay3lQo9uy04xwKqhP_32peZf5E2XvmqYxCRyZqs
+      run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
 
       env:
 
-        NGROK_AUTH_TOKEN: ${{ secrets.1wNqNW2gB0ay3lQo9uy04xwKqhP_32peZf5E2XvmqYxCRyZqs }}
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
 
     - name: Download Important Files.
 
